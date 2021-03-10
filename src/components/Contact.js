@@ -8,13 +8,9 @@ function Contact() {
 
       <header className="App-header">
         <h1>Contact Me</h1>
-        <form >
-          <label>
-            Name:
-            <input type="text" name="name" />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
+	  <p>
+		<code>Soon to emerge</code>
+	  </p>
       </header>
   );
 }
