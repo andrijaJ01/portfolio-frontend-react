@@ -10,8 +10,10 @@ function Contact() {
 
       <header className="App-header">
         <img className='slideIn' src={profile} alt="profile" />
-        <p>Andrija Jovanovic <br/>
-         <code>Fullstack developer</code>
+        <p>
+	 <code> Andrija Jovanovic</code> <br/>
+	  
+         Fullstack developer
         </p>
       </header>
   );
