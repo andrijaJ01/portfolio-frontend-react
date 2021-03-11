@@ -13,6 +13,13 @@ function About() {
     const desc= data.description;
     setDesc(desc);
     setTitle(title);
+
+    if(localStorage.getItem('title')!==title){
+      localStorage.setItem('title','')
+    }
+    if(localStorage.getItem('description')!==desc){
+      localStorage.setItem('description','')
+    }
     
   }
   useEffect(()=>{
