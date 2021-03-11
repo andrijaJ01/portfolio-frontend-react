@@ -13,15 +13,13 @@ function About() {
     const desc= data.description;
     setDesc(desc);
     setTitle(title);
-    if ('title'==null && 'description'==null)
-	  {
-    localStorage.setItem('title',title)
-    localStorage.setItem('description',desc)
-		 }
-	  else{console.log('items already in localStorage.')};
+    
   }
   useEffect(()=>{
-      get_data();
+    get_data();
+
+    localStorage.setItem('title',title)
+    localStorage.setItem('description',desc)
 
     }
               ,[title,desc]
