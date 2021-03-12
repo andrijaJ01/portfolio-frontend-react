@@ -17,8 +17,8 @@ function About() {
     if(localStorage.getItem('text')!==text){
       localStorage.setItem('text','')
     }
-    if(localStorage.getItem('description')!==name){
-      localStorage.setItem('description','')
+    if(localStorage.getItem('name')!==name){
+      localStorage.setItem('name','')
     }
     
   }
@@ -35,7 +35,7 @@ function About() {
   return (
 
     <header className="App-header">
-	  <img src={profile}/>
+	  <img src={profile} alt='profile image mockup' />
       <h1>{name}</h1>
       <p className='t-justify'>
       {text}
