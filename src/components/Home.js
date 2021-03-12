@@ -1,22 +1,47 @@
-
-//picture
-
+import {useState,useEffect} from 'react'
 import profile from './profile.png'
 
+function About() {
+  const [data,setData]= useState({});
+  const [text,setText]=useState(localStorage.getItem('text') || '');
+  const [name,setName]=useState(localStorage.getItem('name') || '');
+  const get_data = async () =>{
+    //const response= await fetch('http://127.0.0.1:8000/');
+    const response= await fetch('https://fastapibackend.herokuapp.com/about');
+    const data= await response.json();
+    const name= data.name;
+    const text= data.text;
+    setText(text);
+    setName(name);
 
-function Contact() {
+    if(localStorage.getItem('text')!==text){
+      localStorage.setItem('text','')
+    }
+    if(localStorage.getItem('name')!==name){
+      localStorage.setItem('name','')
+    }
+    
+  }
+  useEffect(()=>{
+    get_data();
+
+    localStorage.setItem('name',name)
+    localStorage.setItem('text',text)
+
+    }
+              ,[name,text]
+    );
+
   return (
 
-
-      <header className="App-header">
-        <img className='slideIn' src={profile} alt="profile" />
-        <p>
-	 <code> Andrija Jovanovic</code> <br/>
-	  
-         Fullstack developer
-        </p>
-      </header>
+    <header className="App-header">
+	  <img src={profile}/>
+      <h1>{name}</h1>
+      <p className='t-justify'>
+      {text}
+      </p>
+    </header>
   );
 }
 
-export default Contact;
+export default About;
