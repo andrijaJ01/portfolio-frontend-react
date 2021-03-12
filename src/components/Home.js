@@ -25,20 +25,20 @@ function About() {
   useEffect(()=>{
     get_data();
 
-    localStorage.setItem('title',title)
-    localStorage.setItem('description',desc)
+    localStorage.setItem('name',name)
+    localStorage.setItem('text',text)
 
     }
-              ,[title,desc]
+              ,[text,name]
     );
 
   return (
 
     <header className="App-header">
 	  <img src={profile}/>
-      <h1>{title}</h1>
+      <h1>{name}</h1>
       <p className='t-justify'>
-      {desc}
+      {text}
       </p>
     </header>
   );
