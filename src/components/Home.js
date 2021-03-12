@@ -7,7 +7,7 @@ function About() {
   const [name,setName]=useState(localStorage.getItem('name') || '');
   const get_data = async () =>{
    // const response= await fetch('http://127.0.0.1:8000/');
-   const response= await fetch('https://fastapibackend.herokuapp.com/);
+   const response= await fetch('https://fastapibackend.herokuapp.com/');
     const data= await response.json();
     const name= data.name;
     const text= data.text;
